@@ -19,11 +19,47 @@ The API of the Hacker News application exposes the following methods:
 ### List Articles
 
 To list all the articles in the Hacker News, make a GET call to the /articles endpoint:
+```
 GET http://api.muga.com/articles
+```
 
 #### Example
 Copy and paste the following line to your console:
+
+```
 curl -i http://api.muga.com/articles
+```
 
 #### Result
 If everything works as expected, you will receive a status 200 OK with the items in the body of the response:
+```
+[ 
+  { "title": "Title 1", "body": "Article 1 text", "created_at": "...", "updated_at": "" },
+  { "title": "Title 2", "body": "Article 2 text", "created_at": "...", "updated_at": "" },
+  { "title": "Title 3", "body": "Article 3 text", "created_at": "...", "updated_at": "" }
+]
+```
+
+### List Users
+
+To list all the articles in the Hacker News, make a GET call to the /articles endpoint:
+```
+GET http://api.fakehackernews.com/users
+```
+
+#### Example
+Copy and paste the following line to your console:
+
+```
+curl -i http://api.muga.com.co/users
+```
+
+#### Result
+If everything works as expected, you will receive a status 200 OK with the items in the body of the response:
+```
+[ 
+  { "username": "Username 1", "email": "Article 1 text", "name": "name 1", "created_at": "...", "updated_at": "" },
+  { "username": "Username 2", "email": "Article 2 text", "name": "name 2", "created_at": "...", "updated_at": "" },
+  { "username": "Username 3", "email": "Article 3 text", "name": "name 3", "created_at": "...", "updated_at": "" }
+]
+```
