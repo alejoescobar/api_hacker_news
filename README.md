@@ -63,3 +63,28 @@ If everything works as expected, you will receive a status 200 OK with the items
   { "username": "Username 3", "email": "Article 3 text", "name": "name 3", "created_at": "...", "updated_at": "" }
 ]
 ```
+
+### Create new article
+
+To add a new Article, make a POST call to the /articles endpoint with the title of the item:
+```
+POST http://api.fakehackernews.com/articles
+```
+``
+{"title": "Title 1", "body": "Description 1"}
+```
+
+#### Example
+Copy and paste the following line to your console:
+
+```
+curl -i -X POST -H 'Content-Type: application/json' -d '{"title": "Title 1", "body": "Description 1"}' http://api.fakehackernews.com/todo_items
+```
+
+#### Result
+If everything works as expected, you will receive a status 200 OK with the created article:
+```
+[ 
+  { "title": "Title 1", "body": "Description 1", "created_at": "...", "updated_at": "" },
+]
+```
