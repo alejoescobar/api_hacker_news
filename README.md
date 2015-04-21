@@ -70,7 +70,7 @@ To add a new Article, make a POST call to the /articles endpoint with the title 
 ```
 POST http://api.fakehackernews.com/articles
 ```
-``
+```
 {"title": "Title 1", "body": "Description 1"}
 ```
 
