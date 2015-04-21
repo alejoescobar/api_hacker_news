@@ -6,8 +6,9 @@ module Api
     end
     def create
       article = Article.new(article_params)
+      puts article
       if article.save
-        render json: article, status: 201, location: article
+        render json: article, status: 201
       end
     end
 
