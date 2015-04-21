@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    resources :articles
+    resources :articles, only: :index
+    resources :users do
+      resources :comments, only: :index
+    end 
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
