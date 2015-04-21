@@ -9,6 +9,8 @@ module Api
       puts article
       if article.save
         render json: article, status: 201
+      else
+        render json: article.errors, status: 422
       end
     end
 
@@ -21,10 +23,4 @@ module Api
   end
 end
 
-
-
 # curl -i -X POST -H 'Content-Type: application/json' -d '{"title": "marieuta title 1", "body": "mariqueta 1", "user_id":1}' http://localhost:3000/api/articles
-
-# curl -i -X POST -H 'Content-Type: application/json' -d 'article[title]= myTitle ' http://localhost:3000/api/articles
-
-# curl -i http://localhost:3000/api/users

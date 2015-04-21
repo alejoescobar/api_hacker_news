@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :articles, only: [:index, :create]
     resources :users do
-      resources :comments, only: :index
+      resources :comments, only: [:index, :create]
     end
   end
 
