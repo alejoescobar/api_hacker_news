@@ -20,6 +20,15 @@ module ApiHackerNews
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.middleware.insert_before 0, "Rack::Cors" do
+          allow do
+            origins '*'
+            resource '/api/articles', :headers => :any, :methods => [:get, :post, :options]
+            resource '/api/users', :headers => :any, :methods => [:get, :post, :options]
+            resource '/api/users/:user_id/comments', :headers => :any, :methods => [:get, :post, :options]
+          end
+        end
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
