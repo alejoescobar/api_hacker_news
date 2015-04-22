@@ -27,7 +27,7 @@ GET http://api.muga.com/articles
 Copy and paste the following line to your console:
 
 ```
-curl -i http://api.muga.com/articles
+curl -i http://api.fakehackernews.com/api/articles
 ```
 
 #### Result
@@ -51,7 +51,7 @@ GET http://api.fakehackernews.com/users
 Copy and paste the following line to your console:
 
 ```
-curl -i http://api.muga.com.co/users
+curl -i http://api.fakehackernews.com/users
 ```
 
 #### Result
@@ -71,20 +71,44 @@ To add a new Article, make a POST call to the /articles endpoint with the title 
 POST http://api.fakehackernews.com/articles
 ```
 ```
-{"title": "Title 1", "body": "Description 1"}
+{"title": "Title 1", "body": "Description 1", "user_id":1}
 ```
 
 #### Example
 Copy and paste the following line to your console:
 
 ```
-curl -i -X POST -H 'Content-Type: application/json' -d '{"title": "Title 1", "body": "Description 1"}' http://api.fakehackernews.com/todo_items
+curl -i -X POST -H -d '{"title": "Title 1", "body": "Description 1", "user_id"}' http://api.fakehackernews.com/articles
 ```
 
 #### Result
-If everything works as expected, you will receive a status 200 OK with the created article:
+If everything works as expected, you will receive a status 201 OK with the created article:
 ```
 [ 
-  { "title": "Title 1", "body": "Description 1", "created_at": "...", "updated_at": "" },
+  { "title": "Title 1", "body": "Description 1", "created\_at": "...", "updated_at": "" },
+]
+```
+### Create new Comment for an Article 
+
+To add a new Comment for an Article, make a POST call to the /articles/:user_id/comments endpoint with the title of the item:
+```
+POST http://api.fakehackernews.com/articles/:user_id/comments
+```
+```
+{ "body": "Description 1", "user_id":1 }
+```
+
+#### Example
+Copy and paste the following line to your console:
+
+```
+curl -i -X POST -H -d '{ body": "Description 1", "article_id" }' http://api.fakehackernews.com/articles/4/comments
+```
+
+#### Result
+If everything works as expected, you will receive a status 201 OK with the created comment:
+```
+[ 
+  {"body": "Description 1", "user_id: 1", "article_id:4", "created_at": "...", "updated_at": ""},
 ]
 ```
