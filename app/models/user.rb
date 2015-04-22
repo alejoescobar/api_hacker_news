@@ -12,6 +12,7 @@
 #
 
 require 'securerandom'
+
 class User < ActiveRecord::Base
   before_create :set_token
   has_many :articles
@@ -27,3 +28,6 @@ class User < ActiveRecord::Base
     SecureRandom.uuid.gsub(/\-/,'')
   end
 end
+
+
+# curl -i -H "Authorization: Token token=c08a8e3689294ba383c703bdf41a3dac" http://localhost:3000/api/users
