@@ -31,3 +31,4 @@ end
 
 
 # curl -i -H "Authorization: Token token=c08a8e3689294ba383c703bdf41a3dac" http://localhost:3000/api/users
+# curl -i -H "Authorization: Token token=18d9cfe2163d48c1ad3caa429e1573bc" http://api.fakehackernews.com/api/users
